@@ -39,6 +39,11 @@ const api: IApi = {
   getPaymentStatus: ({ saleId, tokenId }) =>
     client.get(`/sales/${saleId}/payment/${tokenId}/status`),
   getBalance: () => client.get(`/sales/${config.saleId}/balance`),
+  callContractMethod: ({ contractAddress, abi }) =>
+    client.post('/call', {
+      to: contractAddress,
+      data: abi,
+    }),
 };
 
 export function apiProvider() {

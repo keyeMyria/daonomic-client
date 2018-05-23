@@ -69,4 +69,5 @@ export interface IApi {
   }>;
   getPaymentStatus(PaymentParams): Response<{}[]>;
   getBalance(): Response<{| balance: number |}>;
+  callContractMethod({| contractAddress: string, abi: string |}): Response<{}>;
 }

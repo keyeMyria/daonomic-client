@@ -289,6 +289,11 @@ const mockApi: IApi = {
     })(),
     fail: createFailResponse,
   }),
+
+  callContractMethod: createMockRoute({
+    success: () => createResponse({}),
+    fail: createFailResponse,
+  }),
 };
 
 export default mockApi;
